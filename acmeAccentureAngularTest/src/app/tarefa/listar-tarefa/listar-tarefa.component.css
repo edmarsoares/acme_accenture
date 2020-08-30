@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    justify-content: center; 
+    align-content: center; 
+    align-items: center;
+    flex-direction: column;
+    /* background-image: url('../../../assets/img/logo.jpeg'); */
+    
+}
+table {
+    margin-top: 50px;
+    width: 80%;
+}
+
+h4 {
+    margin-top: 30px;
+}
+
+i {
+    background-color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}

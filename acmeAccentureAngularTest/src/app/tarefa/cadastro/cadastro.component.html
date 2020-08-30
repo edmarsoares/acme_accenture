@@ -1,0 +1,54 @@
+<div class="content">
+    <h2>Tarefa</h2>
+    <div class="form">
+        <form [formGroup]="formGroup"   #form="ngForm" (ngSubmit)="formGroup.valid && salvar(form)" >
+            <div class="form-group row">
+              <label for="descricao"  class="col-sm-2 col-form-label">Descrição: *</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" formControlName="descricao" id="descricao" placeholder="descricao">
+                <div *ngIf="hasError('descricao', 'required',['']) && form.submitted"  class="alert alert-danger" role="alert">
+                    A descricao não pode ser vazio
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="dataExecucao" class="col-sm-2 col-form-label">Data de execução:</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" formControlName="dataExecucao" id="dataExecucao" placeholder="Password">
+              </div>
+            </div>
+            <fieldset class="form-group">
+                    <span>Itens:</span>
+                        <div class="form-group row" formGroupName="item">
+                          <label for="descricao"  class="col-sm-2 col-form-label">Descrição: </label>
+                          <div class="col-sm-10">
+                            <input type="text" formControlName="descricao" class="form-control" id="descricao" placeholder="descricao">
+                            
+                          </div>
+                        </div>   
+                
+            </fieldset>
+           
+            <div class="button">
+
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                      <button type="submit" class="btn btn-success">Criar </button>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <div class="col-sm-10" (click)="adicionarItem($event)">
+                        <button type="submit" class="btn btn-primary"  >Adicionar </button>
+                      </div>
+                    </div>
+                
+            </div>
+            <h4>Itens adicionados a tarefa:</h4>
+
+            <div *ngFor="let item of itens">
+                   <span> {{item.descricao}} </span>
+            </div>
+          </form>
+          
+    </div>
+</div>

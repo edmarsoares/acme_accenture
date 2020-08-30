@@ -1,0 +1,26 @@
+<div class="content">
+    <h4> Listagem de tarefas</h4>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Descricão</th>
+                <th scope="col">Data da execução</th>
+                <th scope="col">Listar itens</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let tarefa of tarefas">
+            <tr>
+                <th scope="row">{{tarefa.id}}</th>
+                <td>{{tarefa.descricao}}</td>
+                <td>{{tarefa.dataExecucao}}</td>
+                <td (click)="abrirComponenteItem(tarefa.id)" ><i class="fa fa-tasks" aria-hidden="true"></i>
+                </td>
+                <td (click)="abrirComponentCadastroItem(tarefa.id)" ><i class="fa fa-plus" aria-hidden="true"></i></td>
+ 
+            </tr>
+
+        </tbody>
+    </table>
+</div>

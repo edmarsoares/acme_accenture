@@ -1,0 +1,20 @@
+<div class="content">
+    <h2>Adicionar novo item</h2>
+
+   <form [formGroup]="formGroup" #form="ngForm">
+    <div class="form-group row" >
+        <label for="descricao"  class="col-sm-2 col-form-label">Descrição: </label>
+        <div class="col-sm-10">
+          <input type="text" formControlName="descricao" class="form-control" id="descricao" placeholder="descricao">
+        </div>
+      </div>   
+      <div class="button">
+        <div class="form-group row">
+            <div class="col-sm-10" >
+              <button type="submit" (click)="adicionarItem()" class="btn btn-primary">Adicionar</button>
+            </div>
+          </div>
+      </div>
+     
+   </form>
+</div>
